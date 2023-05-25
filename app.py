@@ -18,13 +18,14 @@ st.write("### By Genon, Twinkle S. & Murao, Christian Ivan P.")
 st.write("#### CPE019 - CPE32S3  Emerging Technologies 2 in CpE")
 
 file = st.file_uploader("Rock, Paper or Scissors: Choose Your Champion!", type=["jpg", "png"])
-st.write("Note: The Scissor Pose hand gesture is composed of the thumb, index finger (point finger), and middle finger, with the thumb extended away from the hand and the index and middle fingers kept straight and parallel.")
+
 st.markdown('<div style="background-color: #F0F8FF; padding: 10px; color: black;">'
-            'The Scissor Pose hand gesture is composed of the thumb, '
+            'The Scissors Pose hand gesture is composed of the thumb, '
             'index finger (point finger), and middle finger, with the '
             'thumb extended away from the hand and the index and middle '
             'fingers kept straight and parallel.'
             '</div>', unsafe_allow_html=True)
+
 def import_and_predict(image_data, model):
     size = (256, 256)
     image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
