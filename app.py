@@ -26,9 +26,12 @@ def import_and_predict(image_data, model):
 if file is None:
     st.text("Please upload an image file")
 else:
-    image = Image.open(file)
-    st.image(image, use_column_width=True)
-    prediction = import_and_predict(image, model)
-    class_names = classes
-    string = f"It is a {class_names[np.argmax(prediction)]}!"
-    st.success(string)
+    image = Image.open(file) if file else None
+    if image:
+        st.image(image, use_column_width=True)
+        prediction = import_and_predict(image, model)
+        class_names = classes
+        string = f"It is a {class_names[np.argmax(prediction)]}!"
+        st.success(string)
+    else:
+        st.text("Invalid file. Please upload a valid image file.")
