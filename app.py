@@ -11,7 +11,7 @@ def load_model():
   return model
 
 model = load_model()
-classes = {0: 'Paper', 1: 'Rock', 2: 'Scissors'}
+classes = {0: 'paper', 1: 'rock', 2: 'scissors'}
 
 st.write("# Rock-Paper-Scissors Classifier")
 
