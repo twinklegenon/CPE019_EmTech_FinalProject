@@ -19,7 +19,7 @@ st.write("#### CPE019 - CPE32S3  Emerging Technologies 2 in CpE")
 
 file = st.file_uploader("Rock, Paper or Scissors: Choose Your Champion!", type=["jpg", "png"])
 
-st.markdown('<div style="background-color: #414444; padding: 10px; color: white;">'
+st.markdown('<div style="background-color: #608397; padding: 10px; color: white;">'
             'Note: The Scissors Pose hand gesture is composed of the thumb, '
             'index finger (point finger), and middle finger, with the '
             'thumb extended away from the hand and the index and middle '
