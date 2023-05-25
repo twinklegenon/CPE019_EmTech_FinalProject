@@ -18,7 +18,7 @@ from PIL import Image, ImageOps
 import numpy as np
 
 def import_and_predict(image_data, model):
-    size = (256, 256)
+    size = (256, 256, 3)
     image = np.asarray(image_data)
     image = image / 255.0
     img_reshape = np.reshape(image, (256, 256, 3))
