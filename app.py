@@ -2,7 +2,6 @@ import streamlit as st
 import tensorflow as tf
 
 @st.cache_resource
-
 def load_model():
   model=tf.keras.models.load_model('rps_classifier.h5')
   return model
@@ -19,7 +18,7 @@ file = st.file_uploader("Rock, Paper or Scissors: Choose Your Champion!", type=[
 import cv2
 from PIL import Image,ImageOps
 import numpy as np
-def import_and_predict(image_data,model):
+def import_and_predict(image_data, model):
     size=(256,256)
     image = np.asarray(image)
     image = image / 255.0
@@ -31,7 +30,7 @@ if file is None:
 else:
     image=Image.open(file)
     st.image(image,use_column_width=True)
-    prediction=import_and_predict(image,model)
+    prediction=import_and_predict(image, model)
     class_names= classes
     string = f"It is a {class_names[np.argmax(prediction)]}!"
     # string="OUTPUT : "+class_names[np.argmax(prediction)]
