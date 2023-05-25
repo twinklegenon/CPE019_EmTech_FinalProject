@@ -14,8 +14,8 @@ model = load_model()
 classes = {0: 'paper', 1: 'rock', 2: 'scissors'}
 
 st.write("# Rock-Paper-Scissors Classifier")
-st.write("####### By Genon, Twinkle S. & Murao, Christian Ivan P.")
-st.write("######## CPE019 - CPE32S3  Emerging Technologies 2 in CpE")
+st.write("###### By Genon, Twinkle S. & Murao, Christian Ivan P.")
+st.write("###### CPE019 - CPE32S3  Emerging Technologies 2 in CpE")
 
 file = st.file_uploader("Rock, Paper or Scissors: Choose Your Champion!", type=["jpg", "png"])
 
