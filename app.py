@@ -25,6 +25,9 @@ st.markdown('<div style="background-color: #608397; padding: 10px; color: white;
             'thumb extended away from the hand and the index and middle '
             'fingers kept straight and parallel.'
             '</div>', unsafe_allow_html=True)
+st.markdown('<div style="background-color: #608397; padding: 10px; color: white;">'
+            'We suggest that you take a picture of your hand.'
+            '</div>', unsafe_allow_html=True)
 
 def import_and_predict(image_data, model):
     size = (256, 256)
