@@ -44,3 +44,17 @@ else:
     except Exception as e:
         st.text("Error occurred while processing the image.")
         st.text(str(e))
+        
+        st.write("---")
+
+# Create two columns
+col1, col2 = st.beta_columns([1, 3])
+
+# Column 1: Display the sample image
+with col1:
+    st.image("sample_image.png", use_column_width=True)
+
+# Column 2: Add the disclosure text
+with col2:
+    st.write("### Pose of Rock, Paper, and Scissors")
+    st.write("To get accurate predictions, please ensure that the poses of rock, paper, and scissors in your uploaded image match the sample image above. The hand gestures should be clearly visible and follow the standard poses for each category.")
