@@ -18,7 +18,7 @@ st.write("###### By Genon, Twinkle S. & Murao, Christian Ivan P.")
 st.write("###### CPE019 - CPE32S3  Emerging Technologies 2 in CpE")
 
 file = st.file_uploader("Rock, Paper or Scissors: Choose Your Champion!", type=["jpg", "png"])
-st.write("Note: ")
+st.write("Note: The Scissor Pose hand gesture is composed of the thumb, index finger (point finger), and middle finger, with the thumb extended away from the hand and the index and middle fingers kept straight and parallel.")
 
 def import_and_predict(image_data, model):
     size = (256, 256)
@@ -45,12 +45,7 @@ else:
     except Exception as e:
         st.text("Error occurred while processing the image.")
         st.text(str(e))
-  st.write("Disclosure: Scissor Pose Hand Gesture Composition
+        
+        
 
-The Scissor Pose hand gesture consists of three fingers: the thumb, index finger (also known as the point finger), and middle finger.
-
-To perform the Scissor Pose:
-
-Extend your thumb away from your hand.
-Keep your index finger and middle finger straight and parallel.")
 
