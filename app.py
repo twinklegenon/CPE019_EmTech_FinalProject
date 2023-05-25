@@ -34,7 +34,7 @@ def import_and_predict(image_data, model):
     image_reshape = np.reshape(image, (1, 256, 256, 3))
     prediction = model.predict(image_reshape)
     return prediction
-
+"\n"
 if file is None:
     st.text("Please upload an image file")
 else:
