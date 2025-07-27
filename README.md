@@ -29,5 +29,6 @@ Make sure **Python** is installed on your system. You'll also need to install sp
 
 ```bash
 git clone [https://github.com/twinklegenon/cpe019_emtech_finalproject.git](https://github.com/twinklegenon/cpe019_emtech_finalproject.git)
-cd cpe019_emtech_finalproject
+cd cpe019_emtech_finalproject ```
 
+# Hi
