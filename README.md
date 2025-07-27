@@ -1,109 +1,28 @@
-Repository: twinklegenon/cpe019_emtech_finalproject
-Files analyzed: 5
+# 🧠 CPE019 EmTech Final Project — Rock-Paper-Scissors Classifier
 
-Estimated tokens: 711
+Live App 👉 [Click here to view the Streamlit app](https://twinklegenon-cpe019-emtech-finalproject-app-k0b820.streamlit.app/)
 
-Directory structure:
-└── twinklegenon-cpe019_emtech_finalproject/
-    ├── README.md
-    ├── app.py
-    ├── packages.txt
-    ├── requirements.txt
-    └── rps_classifier.h5
+## 👩‍💻 Authors
+- **Twinkle S. Genon**  
+- **Christian Ivan P. Murao**  
+📚 *CPE019 - CPE32S3 | Emerging Technologies 2 in CpE*
 
+---
 
-================================================
-FILE: README.md
-================================================
-# CPE019_EmTech_FinalProject
-https://twinklegenon-cpe019-emtech-finalproject-app-k0b820.streamlit.app/
+## 📌 About the Project
 
+This project is a **Rock-Paper-Scissors Classifier** that uses a deep learning model to identify hand gestures from images. It was developed using **TensorFlow** and deployed with **Streamlit**.
 
+Upload an image showing a hand gesture of **rock**, **paper**, or **scissors**, and the model will classify it accordingly.
 
-================================================
-FILE: app.py
-================================================
-import streamlit as st
-import tensorflow as tf
-from keras.models import load_model
-import numpy as np
-from PIL import Image, ImageOps
+---
 
-@st.cache_resource
+## 🚀 How to Run Locally
 
-def load_model():
-  model=tf.keras.models.load_model('rps_classifier.h5')
-  return model
+### 🧱 Prerequisites
+Make sure Python is installed. You also need to install required Python and system packages:
 
-model = load_model()
-classes = {0: 'paper', 1: 'rock', 2: 'scissors'}
-
-st.write("# Rock-Paper-Scissors Classifier")
-st.write("### By Genon, Twinkle S. & Murao, Christian Ivan P.")
-st.write("#### CPE019 - CPE32S3  Emerging Technologies 2 in CpE")
-
-file = st.file_uploader("Rock, Paper or Scissors: Choose Your Champion!", type=["jpg", "png"])
-
-st.markdown('<div style="background-color: #608397; padding: 10px; color: white;">'
-            'Note: The Scissors Pose hand gesture is composed of the thumb, '
-            'index finger (point finger), and middle finger, with the '
-            'thumb extended away from the hand and the index and middle '
-            'fingers kept straight and parallel.'
-            '</div>', unsafe_allow_html=True)
-st.markdown('<div style="background-color: #608397; padding: 10px; color: white;">'
-            'We suggest that you take a picture of your hand.'
-            '</div>', unsafe_allow_html=True)
-
-def import_and_predict(image_data, model):
-    size = (256, 256)
-    image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
-    image = np.asarray(image)
-    image = image / 255.0
-    image_reshape = np.reshape(image, (1, 256, 256, 3))
-    prediction = model.predict(image_reshape)
-    return prediction
-"\n"
-if file is None:
-    st.text("Please upload an image file")
-else:
-    try:
-        image = Image.open(file) if file else None
-        if image:
-            st.image(image, use_column_width=True)
-            prediction = import_and_predict(image, model)
-            class_names = classes
-            string = f"It is a {class_names[np.argmax(prediction)]}!"
-            st.success(string)
-        else:
-            st.text("Invalid file. Please upload a valid image file.")
-    except Exception as e:
-        st.text("Error occurred while processing the image.")
-        st.text(str(e))
-        
-        
-
-
-
-
-
-================================================
-FILE: packages.txt
-================================================
-libgl1
-
-
-================================================
-FILE: requirements.txt
-================================================
-streamlit
-tensorflow
-opencv-python-headless
-
-
-
-================================================
-FILE: rps_classifier.h5
-================================================
-version https://git-lfs.github.com/spec/v1
-oid sha256:9cc2169a357bcb7cab514b9f184b7af14bed7c15744d0576a82fe2e52e294ede
-size 157114520
+### 1. Clone the repository:
+```bash
+git clone https://github.com/twinklegenon/cpe019_emtech_finalproject.git
+cd cpe019_emtech_finalproject
